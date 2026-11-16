@@ -1,0 +1,413 @@
+/* Every rule in this file starts with .home, so it only styles the home page */
+
+/* ---------- BASICS ---------- */
+.home {
+  --side: 11.5%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+}
+
+/* ---------- HERO ---------- */
+.home .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/desktop/image-hero.jpg') center / cover no-repeat;
+  min-height: 100vh;
+  padding: 40px var(--side);
+}
+
+.home header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home .logo {
+  width: 140px;
+}
+
+.home nav {
+  display: flex;
+  gap: 30px;
+}
+
+.home nav a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* the underline that grows when the cursor touches a link */
+.home nav a::after,
+.home .social a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: white;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.home nav a:hover::after,
+.home nav a:focus-visible::after,
+.home .social a:hover::after,
+.home .social a:focus-visible::after {
+  width: 24px;
+}
+
+.home .hero-content {
+  margin-top: clamp(60px, 11vw, 160px);
+}
+
+.home h1 {
+  margin: 0;
+  width: 45vw;
+  max-width: 654px;
+  padding: clamp(24px, 2.8vw, 40px);
+  border: 2px solid white;
+  color: white;
+  font-size: clamp(40px, 4.4vw, 64px);
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* hamburger button (hidden on desktop) */
+.home .menu-btn {
+  display: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.home .menu-btn img {
+  display: block;
+  width: 26px;
+}
+
+/* ---------- LEADER (VR) SECTION ---------- */
+.home .leader {
+  display: flex;
+  align-items: flex-end;
+  padding: 120px var(--side);
+}
+
+.home .leader picture {
+  display: block;
+  flex-shrink: 0;
+  width: 66%;
+}
+
+.home .leader img {
+  display: block;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 37%, 78% 37%, 78% 100%, 0 100%);
+}
+
+.home .leader-text {
+  max-width: 450px;
+  margin-left: -5%;
+}
+
+.home h2 {
+  margin: 0 0 20px;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.home p {
+  margin: 0;
+  font-family: 'Alata', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #777;
+}
+
+/* ---------- OUR CREATIONS ---------- */
+.home .creations {
+  padding: 0 var(--side) 120px;
+}
+
+.home .creations-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.home .creations-top h2 {
+  margin: 0;
+}
+
+.home .see-all {
+  padding: 12px 40px;
+  border: 2px solid black;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s;
+}
+
+.home .see-all:hover {
+  background: black;
+  color: white;
+}
+
+.home .see-all-mobile {
+  display: none;
+}
+
+.home .gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.home .card {
+  position: relative;
+  display: block;
+  background: white;
+  color: white;
+  text-decoration: none;
+}
+
+.home .card picture,
+.home .card img {
+  display: block;
+  width: 100%;
+}
+
+.home .card img {
+  transition: opacity 0.3s ease;
+}
+
+.home .card:hover img {
+  opacity: 0.25;
+}
+
+.home .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.7));
+}
+
+.home .card h3 {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 2;
+  width: 120px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ---------- FOOTER ---------- */
+.home .site-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "logo social"
+    "links copy";
+  align-items: center;
+  row-gap: 30px;
+  padding: 60px var(--side);
+  background: black;
+}
+
+.home .footer-logo {
+  grid-area: logo;
+  width: 140px;
+}
+
+.home .social {
+  grid-area: social;
+  display: flex;
+  gap: 20px;
+}
+
+.home .social a {
+  position: relative;
+}
+
+.home .social img {
+  display: block;
+  width: 24px;
+}
+
+.home .site-footer nav {
+  grid-area: links;
+}
+
+.home .site-footer nav a {
+  font-size: 14px;
+}
+
+.home .site-footer p {
+  grid-area: copy;
+  color: #888;
+  font-size: 14px;
+}
+
+/* ---------- MOBILE MENU (full black screen) ---------- */
+.home .mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  padding: 40px 24px;
+  background: black;
+}
+
+.home .mobile-menu.open {
+  display: flex;
+}
+
+.home .mobile-menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home .mobile-menu .menu-btn {
+  display: block;
+}
+
+.home .mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 130px;
+}
+
+.home .mobile-menu-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* ---------- TABLET: 2 columns of cards ---------- */
+@media (max-width: 900px) {
+  .home .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .home {
+    --side: 24px;
+  }
+
+  .home .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/mobile/image-hero.jpg') center / cover no-repeat;
+    padding-top: 40px;
+  }
+
+  .home header nav {
+    display: none;
+  }
+
+  .home .open-btn {
+    display: block;
+  }
+
+  .home .hero-content {
+    margin-top: 150px;
+  }
+
+  .home h1 {
+    width: 100%;
+    max-width: none;
+    font-size: min(48px, calc((100vw - 100px) / 6.8));
+  }
+
+  .home .leader {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 96px var(--side) 90px;
+  }
+
+  .home .leader picture {
+    width: 100%;
+  }
+
+  .home .leader img {
+    clip-path: none;
+  }
+
+  .home .leader-text {
+    max-width: none;
+    margin: 40px 0 0;
+    text-align: center;
+  }
+
+  .home .creations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 80px;
+  }
+
+  .home .creations-top {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .home .see-all-desktop {
+    display: none;
+  }
+
+  .home .see-all-mobile {
+    display: block;
+    margin-top: 50px;
+  }
+
+  .home .gallery {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .home .card h3 {
+    left: 24px;
+    bottom: 24px;
+    width: 130px;
+  }
+
+  .home .site-footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "links"
+      "social"
+      "copy";
+    justify-items: center;
+    row-gap: 36px;
+    padding: 56px var(--side);
+    text-align: center;
+  }
+
+  .home .site-footer nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+}

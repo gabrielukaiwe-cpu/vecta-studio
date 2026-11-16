@@ -1,0 +1,28 @@
+/* Rules that every page shares */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* The mobile menu and the order box switch this class on the body to stop the page scrolling behind them */
+body.menu-open,
+body.modal-open {
+  overflow: hidden;
+}
+
+/* "Challenge by Frontend Mentor" line at the bottom of every page */
+.attribution {
+  padding: 0 24px 24px;
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

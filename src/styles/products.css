@@ -1,0 +1,468 @@
+/* Every rule in this file starts with .shop, so it only styles the products and cart pages */
+
+/* ---------- BASICS ---------- */
+.shop {
+  --red: hsl(14, 86%, 42%);
+  --red-dark: hsl(14, 86%, 30%);
+  --green: hsl(159, 69%, 38%);
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+  min-height: 100vh;
+  background: var(--rose-50);
+  color: var(--rose-900);
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 16px;
+}
+
+.shop p {
+  margin: 0;
+}
+
+.shop button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.shop a:focus-visible,
+.shop button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+/* ---------- TOP BAR ---------- */
+.shop .topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.shop .back-link {
+  position: relative;
+  color: var(--rose-500);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.shop .back-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  transition: width 0.3s ease;
+}
+
+.shop .back-link:hover,
+.shop .back-link:focus-visible {
+  color: var(--red);
+}
+
+.shop .back-link:hover::after,
+.shop .back-link:focus-visible::after {
+  width: 100%;
+}
+
+.shop .cart-link {
+  position: relative;
+  display: block;
+  color: var(--rose-900);
+  transition: color 0.3s;
+}
+
+.shop .cart-link:hover {
+  color: var(--red);
+}
+
+.shop .cart-link svg {
+  display: block;
+}
+
+.shop .cart-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 11px;
+  background: var(--red);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+}
+
+/* ---------- PRODUCTS PAGE ---------- */
+.shop main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+.shop h1 {
+  margin: 8px 0 32px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.shop .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.shop .product-media {
+  position: relative;
+  margin-bottom: 38px;
+}
+
+.shop .product-media picture {
+  display: block;
+}
+
+.shop .product-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+.shop .product.is-selected .product-media img {
+  border-color: var(--red);
+}
+
+.shop .add-btn,
+.shop .stepper {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  width: 160px;
+  height: 44px;
+  transform: translateX(-50%);
+  border-radius: 22px;
+}
+
+.shop .add-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--rose-400);
+  background: white;
+  color: var(--rose-900);
+  font-size: 14px;
+  font-weight: 600;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.shop .add-btn svg {
+  color: var(--red);
+}
+
+.shop .add-btn:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.shop .stepper {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  background: var(--red);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.shop .product.is-selected .stepper {
+  display: flex;
+}
+
+.shop .product.is-selected .add-btn {
+  display: none;
+}
+
+.shop .stepper button {
+  display: flex;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: white;
+  transition: background 0.2s, color 0.2s;
+}
+
+.shop .stepper button:hover {
+  background: white;
+  color: var(--red);
+}
+
+.shop .category {
+  color: var(--rose-500);
+  font-size: 14px;
+}
+
+.shop .name {
+  margin: 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.shop .price {
+  color: var(--red);
+  font-weight: 600;
+}
+
+/* ---------- CART PAGE ---------- */
+.shop .cart-page {
+  display: flex;
+  justify-content: center;
+}
+
+.shop .cart-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 24px;
+  border-radius: 12px;
+  background: white;
+}
+
+.shop .cart-card h1 {
+  margin: 0 0 24px;
+  color: var(--red);
+  font-size: 24px;
+}
+
+.shop .cart-list,
+.shop .order-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shop .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rose-100);
+}
+
+.shop .item-name {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.shop .item-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.shop .item-qty {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.shop .item-unit {
+  color: var(--rose-400);
+}
+
+.shop .item-line {
+  color: var(--rose-500);
+  font-weight: 600;
+}
+
+.shop .remove-btn {
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--rose-300);
+  transition: color 0.2s;
+}
+
+.shop .remove-btn:hover {
+  color: var(--rose-900);
+}
+
+.shop .total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+  font-size: 14px;
+}
+
+.shop .total-row strong {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.shop .carbon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--rose-50);
+  font-size: 14px;
+}
+
+.shop .primary-btn {
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--red);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.shop .primary-btn:hover {
+  background: var(--red-dark);
+}
+
+.shop .empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0 24px;
+  color: var(--rose-500);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.shop .outline-btn {
+  padding: 12px 28px;
+  border: 1px solid var(--rose-400);
+  border-radius: 999px;
+  color: var(--rose-900);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.shop .outline-btn:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* ---------- ORDER CONFIRMED BOX ---------- */
+.shop .overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.shop .modal {
+  width: 100%;
+  max-height: 92vh;
+  padding: 24px;
+  overflow-y: auto;
+  border-radius: 12px 12px 0 0;
+  background: white;
+}
+
+.shop .modal h2 {
+  margin: 24px 0 8px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.shop .modal-sub {
+  color: var(--rose-500);
+}
+
+.shop .order-box {
+  margin: 32px 0;
+  padding: 24px;
+  border-radius: 8px;
+  background: var(--rose-50);
+}
+
+.shop .order-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rose-100);
+}
+
+.shop .order-item:first-child {
+  padding-top: 0;
+}
+
+.shop .order-item img {
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.shop .order-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.shop .order-info .item-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shop .order-line {
+  font-weight: 600;
+}
+
+.shop .order-box .total-row {
+  margin: 24px 0 0;
+}
+
+/* ---------- TABLET AND UP ---------- */
+@media (min-width: 600px) {
+  .shop .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .shop .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 24px;
+  }
+}
+
+@media (min-width: 700px) {
+  .shop .overlay {
+    align-items: center;
+  }
+
+  .shop .modal {
+    max-width: 592px;
+    padding: 40px;
+    border-radius: 12px;
+  }
+}
