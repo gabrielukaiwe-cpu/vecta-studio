@@ -6,7 +6,7 @@ function CartItem({ item, onRemove }) {
   return (
     <li className="cart-item">
       <div>
-        <p className="item-name">{item.name}</p>
+        <h3 className="item-name">{item.name}</h3>
         <p className="item-meta">
           <span className="item-qty">{item.quantity}x</span>
           <span className="item-unit">@ {formatPrice(item.price)}</span>
