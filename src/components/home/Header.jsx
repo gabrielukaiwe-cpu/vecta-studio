@@ -9,8 +9,10 @@ function Header({ menuOpen, onOpenMenu }) {
         <NavLinks />
       </nav>
       <button
+        id="open-menu-btn"
         className="menu-btn open-btn"
         onClick={onOpenMenu}
+        aria-controls="mobile-menu"
         aria-label="Open menu"
         aria-expanded={menuOpen}
       >
