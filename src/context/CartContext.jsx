@@ -8,7 +8,7 @@ function loadCart() {
     const items = saved ? JSON.parse(saved) : [];
     // carts saved before items had an id are dropped, they cannot be matched to a product
     return items.filter((item) => item.id);
-  } catch (error) {
+  } catch {
     return [];
   }
 }
@@ -21,7 +21,7 @@ export function CartProvider({ children }) {
   useEffect(() => {
     try {
       localStorage.setItem(CART_KEY, JSON.stringify(cart));
-    } catch (error) {
+    } catch {
       // storage is blocked: the website still works, it just cannot remember
     }
   }, [cart]);
