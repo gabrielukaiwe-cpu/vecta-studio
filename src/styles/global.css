@@ -1,5 +1,10 @@
 /* Rules that every page shares */
 
+/* Breakpoints used in home.css and products.css (mobile-first, so always min-width):
+   600px = small tablet, 768px = tablet and up, 1000px = desktop.
+   Each file uses only the ones it needs. CSS variables cannot be used inside
+   media queries, so the numbers are written out in each file. */
+
 /* Colours used across the site. Change a colour here and it changes everywhere. */
 :root {
   --red: hsl(14, 86%, 42%);

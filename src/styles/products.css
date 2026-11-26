@@ -432,14 +432,15 @@
   margin: 24px 0 0;
 }
 
-/* ---------- TABLET AND UP ---------- */
+/* ---------- SMALL TABLET AND UP (600px) ---------- */
 @media (min-width: 600px) {
   .shop .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 700px) {
+/* ---------- TABLET AND UP (768px) ---------- */
+@media (min-width: 768px) {
   .shop .overlay {
     align-items: center;
   }
@@ -451,6 +452,7 @@
   }
 }
 
+/* ---------- DESKTOP (1000px) ---------- */
 @media (min-width: 1000px) {
   .shop .grid {
     grid-template-columns: repeat(3, 1fr);
