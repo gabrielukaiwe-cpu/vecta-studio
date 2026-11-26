@@ -7,7 +7,7 @@ import '../styles/products.css';
 
 function Products() {
   useEffect(() => {
-    document.title = 'Desserts | Loopstudios Products';
+    document.title = 'Desserts | Loopstudios';
   }, []);
 
   return (

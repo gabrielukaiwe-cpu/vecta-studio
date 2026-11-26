@@ -18,8 +18,8 @@ Live site: https://luminous-empanada-5f80b6.netlify.app/
 You need [Node.js](https://nodejs.org) installed.
 
 ```bash
-git clone https://github.com/gabrielukaiwe-cpu/vecta-studio.git
-cd vecta-studio
+git clone https://github.com/gabrielukaiwe-cpu/loopstudios.git
+cd loopstudios
 npm install
 npm run dev
 ```

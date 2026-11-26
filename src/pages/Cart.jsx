@@ -16,7 +16,7 @@ function Cart() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = 'Your Cart | Loopstudios Products';
+    document.title = 'Your Cart | Loopstudios';
   }, []);
 
   const closeModal = useCallback(() => {
