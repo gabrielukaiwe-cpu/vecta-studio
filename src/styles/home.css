@@ -2,7 +2,7 @@
 
 /* ---------- BASICS ---------- */
 .home {
-  --side: 24px;
+  --side: 6%; /* left and right space of every section: phones and tablets */
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
 }
@@ -66,16 +66,19 @@
 }
 
 .home .hero-content {
-  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  margin-top: 25%;
 }
 
 .home h1 {
   margin: 0;
   width: 100%;
-  padding: clamp(24px, 2.8vw, 40px);
+  padding: 7% 4%;
   border: 2px solid white;
   color: white;
-  font-size: min(3rem, calc((100vw - 6.25rem) / 6.8));
+  text-align: center;
+  font-size: clamp(1.75rem, 9vw, 3rem);
   font-weight: 300;
   text-transform: uppercase;
   line-height: 1;
@@ -114,12 +117,12 @@
 }
 
 .home .leader-text {
-  margin: 40px 0 0;
+  margin: 10% 0 0;
   text-align: center;
 }
 
 .home h2 {
-  margin: 0 0 20px;
+  margin: 0 0 5%;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 300;
   text-transform: uppercase;
@@ -147,7 +150,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 10%;
 }
 
 .home .creations-top h2 {
@@ -176,7 +179,7 @@
 
 .home .see-all-mobile {
   display: block;
-  margin-top: 50px;
+  margin-top: 14%;
 }
 
 .home .gallery {
@@ -309,7 +312,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: 130px;
+  margin-top: 30%;
 }
 
 .home .mobile-menu-links a {
@@ -353,16 +356,12 @@
     width: 120px;
   }
 
-  .home {
-    --side: 11.5%;
-  }
-
   .home .hero-content {
-    margin-top: clamp(60px, 11vw, 160px);
+    margin-top: 12%;
   }
 
   .home h1 {
-    width: 45vw;
+    width: 55%;
     max-width: 654px;
     font-size: clamp(2.5rem, 4.4vw, 4rem);
   }
@@ -374,7 +373,7 @@
   }
 
   .home .leader picture {
-    width: 66%;
+    width: 55%;
   }
 
   .home .leader img {
@@ -383,7 +382,7 @@
 
   .home .leader-text {
     max-width: 450px;
-    margin: 0 0 0 -5%;
+    margin: 0 0 0 5%;
     text-align: left;
   }
 
@@ -394,7 +393,7 @@
 
   .home .creations-top {
     justify-content: space-between;
-    margin-bottom: 60px;
+    margin-bottom: 6%;
   }
 
   .home .site-footer {
@@ -411,6 +410,18 @@
 
 /* ---------- DESKTOP (1000px): 4 columns of cards ---------- */
 @media (min-width: 1000px) {
+  .home {
+    --side: 11.5%; /* wide screens get more space on the left and right */
+  }
+
+  .home .leader picture {
+    width: 66%;
+  }
+
+  .home .leader-text {
+    margin-left: -5%; /* text tucks into the notch of the picture */
+  }
+
   .home .gallery {
     grid-template-columns: repeat(4, 1fr);
   }
