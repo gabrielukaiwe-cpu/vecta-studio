@@ -4,7 +4,7 @@ import NavLinks from './NavLinks.jsx';
 function Header({ menuOpen, onOpenMenu }) {
   return (
     <header>
-      <img className="logo" src="/images/logo.svg" alt="Loopstudios" />
+      <img className="logo" src="/images/home/logo.svg" alt="Loopstudios" />
       <nav>
         <NavLinks />
       </nav>
@@ -14,7 +14,7 @@ function Header({ menuOpen, onOpenMenu }) {
         aria-label="Open menu"
         aria-expanded={menuOpen}
       >
-        <img src="/images/icon-hamburger.svg" alt="" />
+        <img src="/images/home/icon-hamburger.svg" alt="" />
       </button>
     </header>
   );

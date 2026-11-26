@@ -28,7 +28,7 @@ function OrderModal({ cart, total, onClose, onNewOrder }) {
   return (
     <div className="overlay">
       <div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <img src="/assets/images/icon-order-confirmed.svg" alt="" width="48" height="48" />
+        <img src="/images/shop/icon-order-confirmed.svg" alt="" width="48" height="48" />
         <h2 id="modal-title">Order Confirmed</h2>
         <p className="modal-sub">We hope you enjoy your food!</p>
 

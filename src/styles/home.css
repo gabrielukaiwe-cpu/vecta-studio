@@ -9,7 +9,7 @@
 
 /* ---------- HERO ---------- */
 .home .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/desktop/image-hero.jpg') center / cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/home/desktop/image-hero.jpg') center / cover no-repeat;
   min-height: 100vh;
   padding: 40px var(--side);
 }
@@ -317,7 +317,7 @@
   }
 
   .home .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/mobile/image-hero.jpg') center / cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/home/mobile/image-hero.jpg') center / cover no-repeat;
     padding-top: 40px;
   }
 

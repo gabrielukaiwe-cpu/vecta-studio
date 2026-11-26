@@ -42,7 +42,7 @@ function Cart() {
 
           {cart.length === 0 ? (
             <div className="empty">
-              <img src="/assets/images/illustration-empty-cart.svg" alt="" width="128" height="128" />
+              <img src="/images/shop/illustration-empty-cart.svg" alt="" width="128" height="128" />
               <p>Your added items will appear here</p>
               <Link className="outline-btn" to="/products">Browse desserts</Link>
             </div>
@@ -58,7 +58,7 @@ function Cart() {
                 <strong>{formatPrice(total)}</strong>
               </div>
               <p className="carbon">
-                <img src="/assets/images/icon-carbon-neutral.svg" alt="" width="20" height="20" />
+                <img src="/images/shop/icon-carbon-neutral.svg" alt="" width="20" height="20" />
                 <span>This is a <strong>carbon-neutral</strong> delivery</span>
               </p>
               <button className="primary-btn" onClick={() => setConfirmed(true)}>

@@ -5,9 +5,9 @@ function MobileMenu({ open, onClose }) {
   return (
     <div className={open ? 'mobile-menu open' : 'mobile-menu'}>
       <div className="mobile-menu-top">
-        <img className="logo" src="/images/logo.svg" alt="Loopstudios" />
+        <img className="logo" src="/images/home/logo.svg" alt="Loopstudios" />
         <button className="menu-btn" onClick={onClose} aria-label="Close menu">
-          <img src="/images/icon-close.svg" alt="" />
+          <img src="/images/home/icon-close.svg" alt="" />
         </button>
       </div>
       <div className="mobile-menu-links">
