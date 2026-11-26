@@ -7,9 +7,7 @@ import Footer from '../components/home/Footer.jsx';
 import Attribution from '../components/shared/Attribution.jsx';
 import '../styles/home.css';
 
-// The home page: it puts all the home components together in order
 function Home() {
-  // State = information React remembers. Is the mobile menu open?
   const [menuOpen, setMenuOpen] = useState(false);
 
   function openMenu() {
@@ -20,7 +18,6 @@ function Home() {
     setMenuOpen(false);
   }
 
-  // Set the browser tab title once, when the page first appears
   useEffect(() => {
     document.title = 'Loopstudios | Immersive experiences that deliver';
   }, []);
@@ -40,7 +37,6 @@ function Home() {
     }
     document.addEventListener('keydown', handleKey);
 
-    // this clean-up runs when the menu closes
     return () => {
       document.body.classList.remove('menu-open');
       document.removeEventListener('keydown', handleKey);

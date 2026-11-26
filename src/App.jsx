@@ -3,7 +3,6 @@ import Home from './pages/Home.jsx';
 import Products from './pages/Products.jsx';
 import Cart from './pages/Cart.jsx';
 
-// App decides which page to show, based on the address in the browser
 function App() {
   return (
     <Routes>

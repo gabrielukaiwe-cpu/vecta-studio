@@ -1,9 +1,7 @@
 import { useEffect, useRef } from 'react';
 import formatPrice from '../../utils/formatPrice.js';
 
-// The "Order Confirmed" box that appears on top of the cart page
 function OrderModal({ cart, total, onClose, onNewOrder }) {
-  // A ref is a way to grab a real element on the page, here the button
   const newOrderButton = useRef(null);
 
   useEffect(() => {
@@ -26,7 +24,6 @@ function OrderModal({ cart, total, onClose, onNewOrder }) {
     }
     document.addEventListener('keydown', handleKey);
 
-    // when the box disappears, undo all of that
     return () => {
       document.body.classList.remove('modal-open');
       document.removeEventListener('keydown', handleKey);

@@ -1,5 +1,4 @@
 // Small icons drawn as code (SVG), so CSS can change their colour.
-// In React, SVG settings are written in camelCase: strokeWidth, not stroke-width.
 
 export function AddIcon() {
   return (

@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import NavLinks from './NavLinks.jsx';
 
-// The full black menu on phones. The "open" class (see home.css) makes it appear.
 function MobileMenu({ open, onClose }) {
   const closeButton = useRef(null);
   const wasOpen = useRef(false);

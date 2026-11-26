@@ -5,7 +5,6 @@ import App from './App.jsx';
 import { CartProvider } from './context/CartContext.jsx';
 import './styles/global.css';
 
-// Find the empty <div id="root"> in index.html and draw the whole website inside it
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>

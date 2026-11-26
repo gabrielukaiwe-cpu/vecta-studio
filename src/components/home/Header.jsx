@@ -1,6 +1,5 @@
 import NavLinks from './NavLinks.jsx';
 
-// The logo, the menu links (on big screens) and the hamburger button (on phones)
 function Header({ menuOpen, onOpenMenu }) {
   return (
     <header>

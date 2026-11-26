@@ -1,4 +1,3 @@
-// The small "Challenge by Frontend Mentor" line at the bottom of every page
 function Attribution() {
   return (
     <footer className="attribution">

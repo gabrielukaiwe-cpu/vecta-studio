@@ -8,14 +8,11 @@ import { useCart } from '../context/CartContext.jsx';
 import formatPrice from '../utils/formatPrice.js';
 import '../styles/products.css';
 
-// The cart page: the list of items, the total and the Confirm Order button
 function Cart() {
   const { cart, count, total, removeItem, clearCart } = useCart();
 
-  // Is the "Order Confirmed" box showing?
   const [confirmed, setConfirmed] = useState(false);
 
-  // navigate lets us move to another page from code
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,7 +23,6 @@ function Cart() {
     setConfirmed(false);
   }, []);
 
-  // Start New Order: empty the cart and go back to the desserts
   function startNewOrder() {
     clearCart();
     navigate('/products');

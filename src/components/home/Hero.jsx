@@ -1,6 +1,5 @@
 import Header from './Header.jsx';
 
-// The big picture at the top with the header and the headline
 function Hero({ menuOpen, onOpenMenu }) {
   return (
     <section className="hero">

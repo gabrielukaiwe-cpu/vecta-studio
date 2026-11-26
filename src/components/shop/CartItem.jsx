@@ -1,7 +1,6 @@
 import { RemoveIcon } from './Icons.jsx';
 import formatPrice from '../../utils/formatPrice.js';
 
-// One row in the cart: name, quantity, prices and the remove button
 function CartItem({ item, onRemove }) {
   return (
     <li className="cart-item">

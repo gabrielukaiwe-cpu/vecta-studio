@@ -1,9 +1,7 @@
-// "The leader in interactive VR": a picture with some text beside it
 function Leader() {
   return (
     <section className="leader">
       <picture>
-        {/* phones get the mobile picture, bigger screens get the desktop one */}
         <source media="(max-width: 768px)" srcSet="/images/home/mobile/image-interactive.jpg" />
         <img src="/images/home/desktop/image-interactive.jpg" alt="Person wearing a VR headset" />
       </picture>

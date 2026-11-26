@@ -1,4 +1,3 @@
-// One picture card in "Our creations". title and image are props: the data it receives.
 function CreationCard({ title, image }) {
   return (
     <a href="#" className="card">

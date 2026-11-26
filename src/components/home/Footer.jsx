@@ -8,7 +8,6 @@ const socials = [
   { name: 'Instagram', url: 'https://www.instagram.com' },
 ];
 
-// The black footer: logo, social icons, menu links and copyright
 function Footer() {
   return (
     <footer className="site-footer">

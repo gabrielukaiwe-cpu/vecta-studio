@@ -1,4 +1,3 @@
-// The 9 desserts. This is the same information as the data.json file from Frontend Mentor.
 // Shop images live in public/images/shop, so the paths start with /images/shop/
 const products = [
   {

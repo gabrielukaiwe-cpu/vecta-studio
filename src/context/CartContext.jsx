@@ -1,9 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
-// The name of the "drawer" in the browser's local storage where the cart is kept
 const CART_KEY = 'loopstudios-cart';
 
-// Read the saved cart from local storage (an empty cart if nothing is saved)
 function loadCart() {
   try {
     const saved = localStorage.getItem(CART_KEY);
@@ -15,14 +13,11 @@ function loadCart() {
   }
 }
 
-// A context is a shared box. Any component can open it and use what is inside.
 const CartContext = createContext(null);
 
-// CartProvider holds the cart and wraps the whole website (see main.jsx)
 export function CartProvider({ children }) {
   const [cart, setCart] = useState(loadCart);
 
-  // Every time the cart changes, save it to local storage
   useEffect(() => {
     try {
       localStorage.setItem(CART_KEY, JSON.stringify(cart));
@@ -31,7 +26,7 @@ export function CartProvider({ children }) {
     }
   }, [cart]);
 
-  // If the cart changes in another browser tab, read it again here
+  // Keep several open tabs in sync: when another tab changes the saved cart, reload it here
   useEffect(() => {
     function handleStorage() {
       setCart(loadCart());
@@ -40,18 +35,15 @@ export function CartProvider({ children }) {
     return () => window.removeEventListener('storage', handleStorage);
   }, []);
 
-  // How many of this dessert are in the cart?
   function getQuantity(id) {
     const item = cart.find((entry) => entry.id === id);
     return item ? item.quantity : 0;
   }
 
-  // Add one (change = 1) or take one away (change = -1)
   function changeQuantity(product, change) {
     setCart((current) => {
       const item = current.find((entry) => entry.id === product.id);
 
-      // not in the cart yet: add it
       if (!item) {
         if (change < 0) {
           return current;
@@ -68,7 +60,6 @@ export function CartProvider({ children }) {
         ];
       }
 
-      // already in the cart: change the quantity, or remove it at 0
       const newQuantity = item.quantity + change;
       if (newQuantity <= 0) {
         return current.filter((entry) => entry.id !== product.id);
@@ -79,27 +70,22 @@ export function CartProvider({ children }) {
     });
   }
 
-  // Remove a dessert completely, whatever its quantity
   function removeItem(id) {
     setCart((current) => current.filter((entry) => entry.id !== id));
   }
 
-  // Empty the cart
   function clearCart() {
     setCart([]);
   }
 
-  // The sums
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  // Everything other components are allowed to use
   const value = { cart, count, total, getQuantity, changeQuantity, removeItem, clearCart };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 
-// A short way for any component to open the box: const { count } = useCart();
 export function useCart() {
   const context = useContext(CartContext);
   if (!context) {

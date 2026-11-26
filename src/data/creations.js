@@ -1,4 +1,3 @@
-// The 8 pictures in "Our creations": a title and the name of the picture file
 const creations = [
   { title: 'Deep earth', image: 'image-deep-earth.jpg' },
   { title: 'Night arcade', image: 'image-night-arcade.jpg' },
