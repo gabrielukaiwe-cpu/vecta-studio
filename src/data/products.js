@@ -2,6 +2,7 @@
 // Shop images live in public/images/shop, so the paths start with /images/shop/
 const products = [
   {
+    id: 'waffle-with-berries',
     name: 'Waffle with Berries',
     category: 'Waffle',
     price: 6.50,
@@ -13,6 +14,7 @@ const products = [
     },
   },
   {
+    id: 'vanilla-bean-creme-brulee',
     name: 'Vanilla Bean Crème Brûlée',
     category: 'Crème Brûlée',
     price: 7.00,
@@ -24,6 +26,7 @@ const products = [
     },
   },
   {
+    id: 'macaron-mix-of-five',
     name: 'Macaron Mix of Five',
     category: 'Macaron',
     price: 8.00,
@@ -35,6 +38,7 @@ const products = [
     },
   },
   {
+    id: 'classic-tiramisu',
     name: 'Classic Tiramisu',
     category: 'Tiramisu',
     price: 5.50,
@@ -46,6 +50,7 @@ const products = [
     },
   },
   {
+    id: 'pistachio-baklava',
     name: 'Pistachio Baklava',
     category: 'Baklava',
     price: 4.00,
@@ -57,6 +62,7 @@ const products = [
     },
   },
   {
+    id: 'lemon-meringue-pie',
     name: 'Lemon Meringue Pie',
     category: 'Pie',
     price: 5.00,
@@ -68,6 +74,7 @@ const products = [
     },
   },
   {
+    id: 'red-velvet-cake',
     name: 'Red Velvet Cake',
     category: 'Cake',
     price: 4.50,
@@ -79,6 +86,7 @@ const products = [
     },
   },
   {
+    id: 'salted-caramel-brownie',
     name: 'Salted Caramel Brownie',
     category: 'Brownie',
     price: 4.50,
@@ -90,6 +98,7 @@ const products = [
     },
   },
   {
+    id: 'vanilla-panna-cotta',
     name: 'Vanilla Panna Cotta',
     category: 'Panna Cotta',
     price: 6.50,

@@ -19,7 +19,7 @@ function Products() {
         <div className="grid">
           {/* one ProductCard for every dessert in the products list */}
           {products.map((product) => (
-            <ProductCard key={product.name} product={product} />
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </main>

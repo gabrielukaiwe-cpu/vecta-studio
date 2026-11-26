@@ -7,7 +7,9 @@ const CART_KEY = 'loopstudios-cart';
 function loadCart() {
   try {
     const saved = localStorage.getItem(CART_KEY);
-    return saved ? JSON.parse(saved) : [];
+    const items = saved ? JSON.parse(saved) : [];
+    // carts saved before items had an id are dropped, they cannot be matched to a product
+    return items.filter((item) => item.id);
   } catch (error) {
     return [];
   }
@@ -39,15 +41,15 @@ export function CartProvider({ children }) {
   }, []);
 
   // How many of this dessert are in the cart?
-  function getQuantity(name) {
-    const item = cart.find((entry) => entry.name === name);
+  function getQuantity(id) {
+    const item = cart.find((entry) => entry.id === id);
     return item ? item.quantity : 0;
   }
 
   // Add one (change = 1) or take one away (change = -1)
   function changeQuantity(product, change) {
     setCart((current) => {
-      const item = current.find((entry) => entry.name === product.name);
+      const item = current.find((entry) => entry.id === product.id);
 
       // not in the cart yet: add it
       if (!item) {
@@ -57,6 +59,7 @@ export function CartProvider({ children }) {
         return [
           ...current,
           {
+            id: product.id,
             name: product.name,
             price: product.price,
             quantity: 1,
@@ -68,17 +71,17 @@ export function CartProvider({ children }) {
       // already in the cart: change the quantity, or remove it at 0
       const newQuantity = item.quantity + change;
       if (newQuantity <= 0) {
-        return current.filter((entry) => entry.name !== product.name);
+        return current.filter((entry) => entry.id !== product.id);
       }
       return current.map((entry) =>
-        entry.name === product.name ? { ...entry, quantity: newQuantity } : entry
+        entry.id === product.id ? { ...entry, quantity: newQuantity } : entry
       );
     });
   }
 
   // Remove a dessert completely, whatever its quantity
-  function removeItem(name) {
-    setCart((current) => current.filter((entry) => entry.name !== name));
+  function removeItem(id) {
+    setCart((current) => current.filter((entry) => entry.id !== id));
   }
 
   // Empty the cart
@@ -98,5 +101,9 @@ export function CartProvider({ children }) {
 
 // A short way for any component to open the box: const { count } = useCart();
 export function useCart() {
-  return useContext(CartContext);
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error('useCart must be used inside <CartProvider>');
+  }
+  return context;
 }

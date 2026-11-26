@@ -15,7 +15,7 @@ function CartItem({ item, onRemove }) {
       </div>
       <button
         className="remove-btn"
-        onClick={() => onRemove(item.name)}
+        onClick={() => onRemove(item.id)}
         aria-label={`Remove ${item.name} from cart`}
       >
         <RemoveIcon />

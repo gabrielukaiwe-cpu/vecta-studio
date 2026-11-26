@@ -35,7 +35,7 @@ function OrderModal({ cart, total, onClose, onNewOrder }) {
         <div className="order-box">
           <ul className="order-list">
             {cart.map((item) => (
-              <li className="order-item" key={item.name}>
+              <li className="order-item" key={item.id}>
                 <img src={item.thumbnail} alt="" width="48" height="48" />
                 <div className="order-info">
                   <p className="item-name">{item.name}</p>

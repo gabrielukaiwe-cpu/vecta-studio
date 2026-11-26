@@ -50,7 +50,7 @@ function Cart() {
             <>
               <ul className="cart-list">
                 {cart.map((item) => (
-                  <CartItem key={item.name} item={item} onRemove={removeItem} />
+                  <CartItem key={item.id} item={item} onRemove={removeItem} />
                 ))}
               </ul>
               <div className="total-row">

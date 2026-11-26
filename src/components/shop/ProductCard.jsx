@@ -6,7 +6,7 @@ import formatPrice from '../../utils/formatPrice.js';
 function ProductCard({ product }) {
   const { getQuantity, changeQuantity } = useCart();
 
-  const quantity = getQuantity(product.name);
+  const quantity = getQuantity(product.id);
   const selected = quantity > 0;
 
   return (
