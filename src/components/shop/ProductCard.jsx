@@ -2,11 +2,10 @@ import { AddIcon, DecIcon, IncIcon } from './Icons.jsx';
 import { useCart } from '../../context/CartContext.jsx';
 import formatPrice from '../../utils/formatPrice.js';
 
-// One dessert: its picture, the Add to Cart button (or the - 1 + buttons) and its details
 function ProductCard({ product }) {
   const { getQuantity, changeQuantity } = useCart();
 
-  const quantity = getQuantity(product.name);
+  const quantity = getQuantity(product.id);
   const selected = quantity > 0;
 
   return (

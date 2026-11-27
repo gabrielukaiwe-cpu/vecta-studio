@@ -1,11 +1,5 @@
-// The small "Challenge by Frontend Mentor" line at the bottom of every page
 function Attribution() {
-  return (
-    <footer className="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="https://www.behance.net/gabrielukaiwe2">Gabriel Ukaiwe</a>.
-    </footer>
-  );
+  return null;
 }
 
 export default Attribution;

@@ -2,20 +2,11 @@
 
 /* ---------- BASICS ---------- */
 .shop {
-  --red: hsl(14, 86%, 42%);
-  --red-dark: hsl(14, 86%, 30%);
-  --green: hsl(159, 69%, 38%);
-  --rose-50: hsl(20, 50%, 98%);
-  --rose-100: hsl(13, 31%, 94%);
-  --rose-300: hsl(14, 25%, 72%);
-  --rose-400: hsl(7, 20%, 60%);
-  --rose-500: hsl(12, 20%, 44%);
-  --rose-900: hsl(14, 65%, 9%);
   min-height: 100vh;
   background: var(--rose-50);
   color: var(--rose-900);
   font-family: 'Red Hat Text', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .shop p {
@@ -96,7 +87,7 @@
   border-radius: 11px;
   background: var(--red);
   color: white;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   line-height: 22px;
   text-align: center;
@@ -111,7 +102,7 @@
 
 .shop h1 {
   margin: 8px 0 32px;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.1;
 }
@@ -162,7 +153,7 @@
   border: 1px solid var(--rose-400);
   background: white;
   color: var(--rose-900);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   transition: border-color 0.3s, color 0.3s;
 }
@@ -183,7 +174,7 @@
   padding: 0 12px;
   background: var(--red);
   color: white;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
@@ -212,12 +203,12 @@
 
 .shop .category {
   color: var(--rose-500);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .shop .name {
   margin: 4px 0;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -243,7 +234,7 @@
 .shop .cart-card h1 {
   margin: 0 0 24px;
   color: var(--red);
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .shop .cart-list,
@@ -262,15 +253,15 @@
 }
 
 .shop .item-name {
-  margin-bottom: 8px;
-  font-size: 14px;
+  margin: 0 0 8px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
 .shop .item-meta {
   display: flex;
   gap: 12px;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .shop .item-qty {
@@ -305,11 +296,11 @@
   justify-content: space-between;
   align-items: center;
   margin: 24px 0;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .shop .total-row strong {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -322,7 +313,7 @@
   padding: 16px;
   border-radius: 8px;
   background: var(--rose-50);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .shop .primary-btn {
@@ -332,7 +323,7 @@
   border-radius: 999px;
   background: var(--red);
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   transition: background 0.3s;
 }
@@ -348,7 +339,7 @@
   gap: 16px;
   padding: 16px 0 24px;
   color: var(--rose-500);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
@@ -389,7 +380,7 @@
 
 .shop .modal h2 {
   margin: 24px 0 8px;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.1;
 }
@@ -441,21 +432,15 @@
   margin: 24px 0 0;
 }
 
-/* ---------- TABLET AND UP ---------- */
+/* ---------- SMALL TABLET AND UP (600px) ---------- */
 @media (min-width: 600px) {
   .shop .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1000px) {
-  .shop .grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px 24px;
-  }
-}
-
-@media (min-width: 700px) {
+/* ---------- TABLET AND UP (768px) ---------- */
+@media (min-width: 768px) {
   .shop .overlay {
     align-items: center;
   }
@@ -464,5 +449,13 @@
     max-width: 592px;
     padding: 40px;
     border-radius: 12px;
+  }
+}
+
+/* ---------- DESKTOP (1000px) ---------- */
+@media (min-width: 1000px) {
+  .shop .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 24px;
   }
 }

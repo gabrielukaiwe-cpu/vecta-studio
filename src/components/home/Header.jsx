@@ -1,20 +1,21 @@
 import NavLinks from './NavLinks.jsx';
 
-// The logo, the menu links (on big screens) and the hamburger button (on phones)
 function Header({ menuOpen, onOpenMenu }) {
   return (
     <header>
-      <img className="logo" src="/images/logo.svg" alt="Loopstudios" />
+      <img className="logo" src="/images/home/logo.svg" alt="Loopstudios" />
       <nav>
         <NavLinks />
       </nav>
       <button
+        id="open-menu-btn"
         className="menu-btn open-btn"
         onClick={onOpenMenu}
+        aria-controls="mobile-menu"
         aria-label="Open menu"
         aria-expanded={menuOpen}
       >
-        <img src="/images/icon-hamburger.svg" alt="" />
+        <img src="/images/home/icon-hamburger.svg" alt="" />
       </button>
     </header>
   );

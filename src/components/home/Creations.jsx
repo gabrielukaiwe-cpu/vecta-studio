@@ -1,7 +1,6 @@
 import CreationCard from './CreationCard.jsx';
 import creations from '../../data/creations.js';
 
-// The "Our creations" section: a title, a "See all" button and the grid of cards
 function Creations() {
   return (
     <section className="creations">
@@ -10,7 +9,6 @@ function Creations() {
         <a href="#" className="see-all see-all-desktop">See all</a>
       </div>
       <div className="gallery">
-        {/* one CreationCard for every item in the creations list */}
         {creations.map((creation) => (
           <CreationCard key={creation.title} title={creation.title} image={creation.image} />
         ))}

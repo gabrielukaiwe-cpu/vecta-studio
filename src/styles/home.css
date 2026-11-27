@@ -2,14 +2,14 @@
 
 /* ---------- BASICS ---------- */
 .home {
-  --side: 11.5%;
+  --side: 6%; /* left and right space of every section: phones and tablets */
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
 }
 
 /* ---------- HERO ---------- */
 .home .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/desktop/image-hero.jpg') center / cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/home/mobile/image-hero.jpg') center / cover no-repeat;
   min-height: 100vh;
   padding: 40px var(--side);
 }
@@ -26,14 +26,20 @@
 
 .home nav {
   display: flex;
-  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.home header nav {
+  display: none;
 }
 
 .home nav a {
   position: relative;
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
@@ -60,17 +66,19 @@
 }
 
 .home .hero-content {
-  margin-top: clamp(60px, 11vw, 160px);
+  display: flex;
+  justify-content: center;
+  margin-top: 25%;
 }
 
 .home h1 {
   margin: 0;
-  width: 45vw;
-  max-width: 654px;
-  padding: clamp(24px, 2.8vw, 40px);
+  width: 100%;
+  padding: 7% 4%;
   border: 2px solid white;
   color: white;
-  font-size: clamp(40px, 4.4vw, 64px);
+  text-align: center;
+  font-size: clamp(1.75rem, 9vw, 3rem);
   font-weight: 300;
   text-transform: uppercase;
   line-height: 1;
@@ -78,7 +86,7 @@
 
 /* hamburger button (hidden on desktop) */
 .home .menu-btn {
-  display: none;
+  display: block;
   padding: 0;
   border: 0;
   background: none;
@@ -93,30 +101,29 @@
 /* ---------- LEADER (VR) SECTION ---------- */
 .home .leader {
   display: flex;
-  align-items: flex-end;
-  padding: 120px var(--side);
+  flex-direction: column;
+  padding: 96px var(--side) 90px;
 }
 
 .home .leader picture {
   display: block;
   flex-shrink: 0;
-  width: 66%;
+  width: 100%;
 }
 
 .home .leader img {
   display: block;
   width: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% 37%, 78% 37%, 78% 100%, 0 100%);
 }
 
 .home .leader-text {
-  max-width: 450px;
-  margin-left: -5%;
+  margin: 10% 0 0;
+  text-align: center;
 }
 
 .home h2 {
-  margin: 0 0 20px;
-  font-size: clamp(28px, 3vw, 40px);
+  margin: 0 0 5%;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 300;
   text-transform: uppercase;
   line-height: 1;
@@ -125,22 +132,25 @@
 .home p {
   margin: 0;
   font-family: 'Alata', sans-serif;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 400;
   line-height: 1.4;
-  color: #777;
+  color: var(--gray-text);
 }
 
 /* ---------- OUR CREATIONS ---------- */
 .home .creations {
-  padding: 0 var(--side) 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--side) 80px;
 }
 
 .home .creations-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 10%;
 }
 
 .home .creations-top h2 {
@@ -152,7 +162,7 @@
   border: 2px solid black;
   color: black;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: 4px;
   text-transform: uppercase;
   transition: background 0.3s, color 0.3s;
@@ -163,14 +173,20 @@
   color: white;
 }
 
-.home .see-all-mobile {
+.home .see-all-desktop {
   display: none;
+}
+
+.home .see-all-mobile {
+  display: block;
+  margin-top: 14%;
 }
 
 .home .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
 }
 
 .home .card {
@@ -205,12 +221,12 @@
 
 .home .card h3 {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  bottom: 24px;
+  left: 24px;
   z-index: 2;
-  width: 120px;
+  width: 130px;
   margin: 0;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 300;
   text-transform: uppercase;
   line-height: 1;
@@ -219,14 +235,18 @@
 /* ---------- FOOTER ---------- */
 .home .site-footer {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "logo social"
-    "links copy";
+    "logo"
+    "links"
+    "social"
+    "copy";
+  justify-items: center;
   align-items: center;
-  row-gap: 30px;
-  padding: 60px var(--side);
+  row-gap: 36px;
+  padding: 56px var(--side);
   background: black;
+  text-align: center;
 }
 
 .home .footer-logo {
@@ -254,13 +274,13 @@
 }
 
 .home .site-footer nav a {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .home .site-footer p {
   grid-area: copy;
-  color: #888;
-  font-size: 14px;
+  color: var(--gray-footer);
+  font-size: 0.875rem;
 }
 
 /* ---------- MOBILE MENU (full black screen) ---------- */
@@ -292,122 +312,117 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: 130px;
+  margin-top: 30%;
 }
 
 .home .mobile-menu-links a {
   color: white;
   text-decoration: none;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 300;
   text-transform: uppercase;
 }
 
-/* ---------- TABLET: 2 columns of cards ---------- */
-@media (max-width: 900px) {
+/* ---------- TABLET AND UP: the desktop layout starts at 768px ---------- */
+@media (min-width: 768px) {
+  .home .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/home/desktop/image-hero.jpg');
+  }
+
+  .home .open-btn,
+  .home .see-all-mobile {
+    display: none;
+  }
+
+  .home header nav,
+  .home .see-all-desktop {
+    display: flex;
+  }
+
+  .home nav {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 30px;
+  }
+
   .home .gallery {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ---------- MOBILE ---------- */
-@media (max-width: 768px) {
-  .home {
-    --side: 24px;
-  }
-
-  .home .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/mobile/image-hero.jpg') center / cover no-repeat;
-    padding-top: 40px;
-  }
-
-  .home header nav {
-    display: none;
-  }
-
-  .home .open-btn {
-    display: block;
-  }
-
-  .home .hero-content {
-    margin-top: 150px;
-  }
-
-  .home h1 {
-    width: 100%;
-    max-width: none;
-    font-size: min(48px, calc((100vw - 100px) / 6.8));
-  }
-
-  .home .leader {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 96px var(--side) 90px;
-  }
-
-  .home .leader picture {
-    width: 100%;
-  }
-
-  .home .leader img {
-    clip-path: none;
-  }
-
-  .home .leader-text {
-    max-width: none;
-    margin: 40px 0 0;
-    text-align: center;
-  }
-
-  .home .creations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 80px;
-  }
-
-  .home .creations-top {
-    justify-content: center;
-    margin-bottom: 40px;
-  }
-
-  .home .see-all-desktop {
-    display: none;
-  }
-
-  .home .see-all-mobile {
-    display: block;
-    margin-top: 50px;
-  }
-
-  .home .gallery {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    width: 100%;
+    gap: 30px;
   }
 
   .home .card h3 {
-    left: 24px;
-    bottom: 24px;
-    width: 130px;
+    bottom: 30px;
+    left: 30px;
+    width: 120px;
+  }
+
+  .home .hero-content {
+    margin-top: 12%;
+  }
+
+  .home h1 {
+    width: 55%;
+    max-width: 654px;
+    font-size: clamp(2.5rem, 4.4vw, 4rem);
+  }
+
+  .home .leader {
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 120px var(--side);
+  }
+
+  .home .leader picture {
+    width: 55%;
+  }
+
+  .home .leader img {
+    clip-path: polygon(0 0, 100% 0, 100% 37%, 78% 37%, 78% 100%, 0 100%);
+  }
+
+  .home .leader-text {
+    max-width: 450px;
+    margin: 0 0 0 5%;
+    text-align: left;
+  }
+
+  .home .creations {
+    display: block;
+    padding-bottom: 120px;
+  }
+
+  .home .creations-top {
+    justify-content: space-between;
+    margin-bottom: 6%;
   }
 
   .home .site-footer {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
     grid-template-areas:
-      "logo"
-      "links"
-      "social"
-      "copy";
-    justify-items: center;
-    row-gap: 36px;
-    padding: 56px var(--side);
-    text-align: center;
+      "logo social"
+      "links copy";
+    justify-items: stretch;
+    row-gap: 30px;
+    padding: 60px var(--side);
+    text-align: left;
+  }
+}
+
+/* ---------- DESKTOP (1000px): 4 columns of cards ---------- */
+@media (min-width: 1000px) {
+  .home {
+    --side: 11.5%; /* wide screens get more space on the left and right */
   }
 
-  .home .site-footer nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
+  .home .leader picture {
+    width: 66%;
+  }
+
+  .home .leader-text {
+    margin-left: -5%; /* text tucks into the notch of the picture */
+  }
+
+  .home .gallery {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

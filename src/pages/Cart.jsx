@@ -8,25 +8,21 @@ import { useCart } from '../context/CartContext.jsx';
 import formatPrice from '../utils/formatPrice.js';
 import '../styles/products.css';
 
-// The cart page: the list of items, the total and the Confirm Order button
 function Cart() {
   const { cart, count, total, removeItem, clearCart } = useCart();
 
-  // Is the "Order Confirmed" box showing?
   const [confirmed, setConfirmed] = useState(false);
 
-  // navigate lets us move to another page from code
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = 'Your Cart | Loopstudios Products';
+    document.title = 'Your Cart | Loopstudios';
   }, []);
 
   const closeModal = useCallback(() => {
     setConfirmed(false);
   }, []);
 
-  // Start New Order: empty the cart and go back to the desserts
   function startNewOrder() {
     clearCart();
     navigate('/products');
@@ -42,7 +38,7 @@ function Cart() {
 
           {cart.length === 0 ? (
             <div className="empty">
-              <img src="/assets/images/illustration-empty-cart.svg" alt="" width="128" height="128" />
+              <img src="/images/shop/illustration-empty-cart.svg" alt="" width="128" height="128" />
               <p>Your added items will appear here</p>
               <Link className="outline-btn" to="/products">Browse desserts</Link>
             </div>
@@ -50,7 +46,7 @@ function Cart() {
             <>
               <ul className="cart-list">
                 {cart.map((item) => (
-                  <CartItem key={item.name} item={item} onRemove={removeItem} />
+                  <CartItem key={item.id} item={item} onRemove={removeItem} />
                 ))}
               </ul>
               <div className="total-row">
@@ -58,7 +54,7 @@ function Cart() {
                 <strong>{formatPrice(total)}</strong>
               </div>
               <p className="carbon">
-                <img src="/assets/images/icon-carbon-neutral.svg" alt="" width="20" height="20" />
+                <img src="/images/shop/icon-carbon-neutral.svg" alt="" width="20" height="20" />
                 <span>This is a <strong>carbon-neutral</strong> delivery</span>
               </p>
               <button className="primary-btn" onClick={() => setConfirmed(true)}>

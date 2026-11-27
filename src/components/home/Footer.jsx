@@ -1,20 +1,28 @@
 import NavLinks from './NavLinks.jsx';
 
-// The black footer: logo, social icons, menu links and copyright
+// Social links go to each network's home page because the studio has no profiles yet
+const socials = [
+  { name: 'Facebook', url: 'https://www.facebook.com' },
+  { name: 'Twitter', url: 'https://twitter.com' },
+  { name: 'Pinterest', url: 'https://www.pinterest.com' },
+  { name: 'Instagram', url: 'https://www.instagram.com' },
+];
+
 function Footer() {
   return (
     <footer className="site-footer">
-      <img className="footer-logo" src="/images/logo.svg" alt="Loopstudios" />
+      <img className="footer-logo" src="/images/home/logo.svg" alt="Loopstudios" />
       <div className="social">
-        <a href="#"><img src="/images/icon-facebook.svg" alt="Facebook" /></a>
-        <a href="#"><img src="/images/icon-twitter.svg" alt="Twitter" /></a>
-        <a href="#"><img src="/images/icon-pinterest.svg" alt="Pinterest" /></a>
-        <a href="#"><img src="/images/icon-instagram.svg" alt="Instagram" /></a>
+        {socials.map((social) => (
+          <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer">
+            <img src={`/images/home/icon-${social.name.toLowerCase()}.svg`} alt={social.name} />
+          </a>
+        ))}
       </div>
       <nav>
         <NavLinks />
       </nav>
-      <p>© 2021 Loopstudios. All rights reserved.</p>
+      <p>© {new Date().getFullYear()} Loopstudios. All rights reserved.</p>
     </footer>
   );
 }
