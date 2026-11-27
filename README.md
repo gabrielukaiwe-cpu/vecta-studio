@@ -5,7 +5,7 @@ A React rebuild of two Frontend Mentor challenges in one project:
 - **Home page** (`/`): the Loopstudios landing page, with a mobile menu and a gallery of creations.
 - **Products and cart** (`/products`, `/cart`): a dessert shop with a cart that is saved in the browser and an order confirmation box.
 
-Live site: https://luminous-empanada-5f80b6.netlify.app/
+Live site: https://loopstudios-gabriel.netlify.app/
 
 ## Built with
 
